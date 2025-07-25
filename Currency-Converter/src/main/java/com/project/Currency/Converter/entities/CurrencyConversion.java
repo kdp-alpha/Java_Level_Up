@@ -6,7 +6,7 @@ import lombok.Data;
 @Entity
 @Data
 @Table(name="currency")
-public class CurrencyConversion {
+public class CurrencyConversion extends AuditableEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
      private Long Id;
