@@ -1,5 +1,6 @@
 package com.example.Security.Devoxx;
 
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,8 +13,8 @@ public class WebController {
     }
 
     @GetMapping("/private")
-    public String privatePage(){
-        return "This is private page";
+    public String privatePage(Authentication authentication){
+        return "This is private page " + authentication.getName() + " " + authentication.getDetails();
     }
 
 
